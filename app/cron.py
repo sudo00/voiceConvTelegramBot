@@ -1,13 +1,7 @@
 from telegram import Bot
 import mysql.connector
 
-from config import TG_TOKEN
-from config import TG_API_URL
-from config import MYSQL_USER
-from config import MYSQL_HOST
-from config import MYSQL_PASS
-from config import MYSQL_DB
-from config import MYSQL_TABLE
+from config import *
 
 
 GROUPS = [
@@ -37,7 +31,7 @@ def main():
     )
     dbCmd = dataBase.cursor()
     dbCmd.execute("use " + MYSQL_DB)
-    dbCmd.execute("DELETE FROM "  + MYSQL_TABLE)
+    dbCmd.execute("DELETE FROM " + MYSQL_TABLE_ATTENTION)    
     dataBase.commit()
     dataBase.close()
 

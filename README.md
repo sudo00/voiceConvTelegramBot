@@ -1,4 +1,3 @@
-
 > Your Own Telegram control bot
 
 
@@ -6,6 +5,7 @@
 
 * The bot controls a telegram chat to send only voice messages by participants.
 * Send info message every day in chat by cron.
+* Warning user to send voice message when join in chat.
 
 ## How to install a bot?
 
@@ -16,4 +16,5 @@
 ## How to set cron work to send info message in chat?
 
 * Set cron "0 0 * * *  /usr/local/bin/python3.5 /../cron.py >> /var/log/cron.log 2>&1"
+* Set cron "* * * * *  /usr/local/bin/python3.5 /../welcome.py >> /var/log/cron.log 2>&1"
 * Set CHAT_ID of your chat in cron.py#15
